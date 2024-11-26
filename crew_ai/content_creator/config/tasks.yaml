@@ -1,0 +1,16 @@
+research_task:
+  description: >
+    Conduct thorough research to support the creation of a blog post on {topic}. This includes selecting a 
+    relevant and engaging blog topic, performing keyword research to identify key SEO terms, developing a 
+    structured outline for the blog, and compiling reliable sources and references. Focus on finding 
+    interesting and up-to-date information considering the current year is 2024. Identify emerging 
+    trends, analyze competitor strategies, and gather data-driven insights that align with {company}'s brand 
+    objectives and effectively address the target audience's needs.
+
+  expected_output: >
+    - A selected blog topic with a brief explanation of its relevance and engagement potential.
+    - A list of primary and secondary keywords, including long-tail variations, along with metrics such as search volume and competition level.
+    - A detailed blog outline with headings and subheadings, each accompanied by a brief description.
+    - A list of at least 10 credible sources, including URLs or citations, along with a summary of the information each source provides relevant to the blog topic.
+
+  agent: researcher
