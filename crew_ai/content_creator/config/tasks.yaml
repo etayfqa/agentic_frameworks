@@ -1,16 +1,45 @@
-research_task:
+plan:
+    description: >
+      1. Prioritize the latest trends, key players, and noteworthy news on {topic}.
+      2. Identify the target audience, considering their interests and pain points.
+      3. Develop a detailed content outline including an introduction, key points, and a call to action.
+      4. Incorporate SEO keywords and relevant data or sources.
+    expected_output: >
+      A comprehensive content plan document with an outline, audience analysis,
+      SEO keywords, and resources.
+    agent: planner
+
+write:
   description: >
-    Conduct thorough research to support the creation of a blog post on {topic}. This includes selecting a 
-    relevant and engaging blog topic, performing keyword research to identify key SEO terms, developing a 
-    structured outline for the blog, and compiling reliable sources and references. Focus on finding 
-    interesting and up-to-date information considering the current year is 2024. Identify emerging 
-    trends, analyze competitor strategies, and gather data-driven insights that align with {company}'s brand 
-    objectives and effectively address the target audience's needs.
-
+    1. Use the content plan to craft a compelling blog post on {topic}.
+    2. Incorporate SEO keywords naturally.
+    3. Sections/Subtitles are properly named in an engaging manner.
+    4. Ensure the post is structured with an engaging introduction, insightful body,
+        and a summarizing conclusion.
+    5. Proofread for grammatical errors and alignment with the brand's voice.
   expected_output: >
-    - A selected blog topic with a brief explanation of its relevance and engagement potential.
-    - A list of primary and secondary keywords, including long-tail variations, along with metrics such as search volume and competition level.
-    - A detailed blog outline with headings and subheadings, each accompanied by a brief description.
-    - A list of at least 10 credible sources, including URLs or citations, along with a summary of the information each source provides relevant to the blog topic.
+    A well-written blog post in markdown format, ready for publication,
+    each section should have 2 or 3 paragraphs.
+  agent: writer
 
-  agent: researcher
+edit:
+  description: >
+    Proofread the given blog post for grammatical errors and alignment with the brand's voice.
+  expected_output: >
+    A title, subtitle and a well-written blog post content in HTML format, ready for publication.
+    The output should include:
+    - A single `<h1>` tag for the blog title.
+    - Multiple `<h2>` tags for subheadings within the content.
+    - `<p>` tags for paragraphs under each subheading, with each section containing 2 or 3 paragraphs.
+    - Key points or phrases emphasized using `<b>` tags for bolding.
+    - Content structured to ensure readability, with a clear hierarchy of headings and paragraphs.
+    Example HTML structure:
+
+    <h1>Blog Title</h1>
+    <h2>Subheading 1</h2>
+    <p>This is the first paragraph under subheading 1. It introduces the main idea.</p>
+    <p>This is the second paragraph with more details about the topic. Key points can be <b>bolded</b> to draw attention.</p>
+    <h2>Subheading 2</h2>
+    <p>This is the first paragraph under subheading 2. It introduces a new aspect of the topic.</p>
+    <p>This is the second paragraph that elaborates further with examples and details.</p>
+  agent: editor
